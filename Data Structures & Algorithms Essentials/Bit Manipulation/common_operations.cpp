@@ -22,13 +22,27 @@ void updateIthBit(int &num, int ith, int val){
 	num = num | mask;
 }
 
+void clearLastIBits(int &num, int i){
+	int mask = -1 << i;
+	num = num & mask;
+}
+
+void clearNBitsInRange(int &num, int i, int j){
+	int a = -1 << (j + 1);
+	int b = (1 << i) - 1;
+	int mask = a | b;
+	num = num & mask;
+}
+
 int main(){
-	int num = 13;
-	int ith;
-	cin >> ith;
+	int num = 31;
+	int i = 2;
+	// cin >> ith;
 	// cout << getIthBit(num,ith);
 	// setIthBit(num,ith);
 	// clearIthBit(num,ith);
-	updateIthBit(num,ith,1);
+	// updateIthBit(num,ith,1);
+	// clearLastIBits(num,i);
+	clearNBitsInRange(num,1,3);
 	cout << num;
 }
