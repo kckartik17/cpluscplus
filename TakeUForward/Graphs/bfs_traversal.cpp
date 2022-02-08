@@ -3,12 +3,12 @@ using namespace std;
 
 vector<int> bfsOfGraph(int V, vector<int> adj[]) {
 	vector<int> bfs;
-    vector<int> vis(V+1,0);
+    vector<bool> vis(V+1,false);
         for(int i = 1; i <= V; i++){
             if(!vis[i]){
                 queue<int> q;
                 q.push(i);
-                vis[i] = 1;
+                vis[i] = true;
                 
                 while(!q.empty()){
                     int node = q.front();
@@ -18,7 +18,7 @@ vector<int> bfsOfGraph(int V, vector<int> adj[]) {
                     for(auto it: adj[node]){
                         if(!vis[it]){
                             q.push(it);
-                            vis[it] = 1;
+                            vis[it] = true;
                         }
                     }
                 }
