@@ -8,7 +8,7 @@ int main(){
 	for(int pos = 0; pos < n - 1; pos++){
 		int current = arr[pos];
 		int min_position = pos;
-		for(int j = pos; j < n; j++){
+		for(int j = pos + 1; j < n; j++){
 			if(arr[j] < arr[min_position]){
 				min_position = j;
 			}
