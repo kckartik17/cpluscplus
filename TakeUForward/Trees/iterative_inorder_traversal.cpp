@@ -1,4 +1,4 @@
-class Solution {
+  class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
         stack<TreeNode*> st;
